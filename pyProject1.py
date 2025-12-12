@@ -10,7 +10,6 @@ Features:
     bit 1 (2) = East wall
     bit 2 (4) = South wall
     bit 3 (8) = West wall
-  (Matches convention used in earlier discussion with small coordinate flip in drawing)
 - Flood-fill (BFS from center 2x2) to produce distance map.
 - step_to_lowest() moves the mouse to a neighbor with lower flood value (tie prefers current direction).
 - A* path find from current to center (for comparison/demo).
@@ -345,12 +344,12 @@ def main():
                     show_nums = not show_nums
                 if event.key == pygame.K_r:
                     reset()
-                if event.key == pygame.K_b:  # زرار B
-                 curr_x, curr_y = 0, 0   # نرجع للبداية
-                 Direction = 0            # إعادة الاتجاه للبداية
-                    # لو عايز تحدث الفلود
+                if event.key == pygame.K_b:  
+                 curr_x, curr_y = 0, 0   
+                 Direction = 0            
+                   
                  flood_fill()
-                      # لو عايز توقف أي حركة آلية
+                     
                  #auto_run = False
                  #follow_astar = False
                  #astar_path = []    
@@ -380,7 +379,7 @@ def main():
                     turn_to_dir(d)
                     curr_x, curr_y = nx, ny
                     break
-        # تحقق إذا وصل للجول بعد الحركة
+        
           
             if (curr_x, curr_y) in center_coords:
                 follow_astar = False
